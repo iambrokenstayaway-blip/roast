@@ -22,23 +22,24 @@ if name:
         
     }
     
-    # Process the name (lowercase to catch variations)
+     # Process the name (lowercase to catch variations)
     name_lower = name.lower().strip()
     
-    # --- AUDIO AUDIO LOGIC ---
+    # --- AUDIO LOGIC WITH RESET KEYS ---
     if name_lower == "tasin":
-        # Play both celebration sounds at the exact same time
-        st.audio("https://www.myinstants.com/media/sounds/kids-saying-yay-sound-effect_3.mp3", format="audio/mp3", autoplay=True)
-        st.audio("https://www.myinstants.com/media/sounds/gugugugu.mp3", format="audio/mp3", autoplay=True)
+        st.write("🎵 *Press play on the players below if they do not start automatically!*")
+        # Added unique keys using the name variable to force a fresh reload
+        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"tada_{name_lower}")
+        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"giggle_{name_lower}")
     else:
-        # Every other name (Nabil, Antony, Toppo, or anything wrong) triggers the brain fart sound
-        st.audio("https://www.myinstants.com/media/sounds/long-brain-fart.mp3", format="audio/mp3", autoplay=True)
+        st.write("💨 *Press play below if the browser blocked the automatic sound!*")
+        # Added unique key using the name variable to force a fresh reload
+        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"whistle_{name_lower}")
         
     # --- TEXT OUTPUT LOGIC ---
     if name_lower in jokes:
         response = jokes[name_lower]
         st.success(response)
     else:
-        response = " You are an absolute Baka. Incorrect Answer. Type your master's name."
+        response = "Nabil is an absolute Baka. Incorrect Answer."
         st.error(response)
-
