@@ -18,7 +18,8 @@ if name:
         "sonet":"Long ass goofy ass NiGGGA.Saala pu*ki me daala masala. Sonet ne chaat daala. Ho gaya kala. shut the fuck up, Baka. His majesty has a name that starts with T. You eat his dih.",
         "muin":"Fat ass white ass white nigga. You don't have any beard and you are really very gay. You are in a romantic relationship with Fahim. Shut the fuck up and lose some weight.",
         "labib2":"Gay nigga. Shut the fuck up",
-        "fahim":"gay"
+        "fahim":"gay",
+        "shahed":"Stupid white nigga.Panicking all day and then going back to watching reels.Write the name of the strongest and coolest person you know. His name starts with a T, you eat his dih."
         
     }
     
@@ -29,17 +30,17 @@ if name:
     if name_lower == "tasin":
         st.write("🎵 *Press play on the players below if they do not start automatically!*")
         # Added unique keys using the name variable to force a fresh reload
-        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"tada_{name_lower}")
-        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"giggle_{name_lower}")
+        st.audio("https://www.myinstants.com/media/sounds/kids-saying-yay-sound-effect_3.mp3", format="audio/mp3", autoplay=True, key=f"tada_{name_lower}")
+        st.audio("https://www.myinstants.com/media/sounds/gugugugu.mp3", format="audio/mp3", autoplay=True, key=f"giggle_{name_lower}")
     else:
         st.write("💨 *Press play below if the browser blocked the automatic sound!*")
         # Added unique key using the name variable to force a fresh reload
-        st.audio("https://wikimedia.org", format="audio/mp3", autoplay=True, key=f"whistle_{name_lower}")
+        st.audio("https://www.myinstants.com/media/sounds/67-brain-fart.mp3", format="audio/mp3", autoplay=True, key=f"whistle_{name_lower}")
         
     # --- TEXT OUTPUT LOGIC ---
     if name_lower in jokes:
         response = jokes[name_lower]
         st.success(response)
     else:
-        response = "Nabil is an absolute Baka. Incorrect Answer."
+        response = "You are an absolute Baka. Incorrect Answer."
         st.error(response)
